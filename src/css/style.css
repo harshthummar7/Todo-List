@@ -1,0 +1,142 @@
+body{
+    font-family: sans-serif;
+    background-color: rgb(231, 231, 231);
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+.todoInput{
+    width: 1510px;
+    height: 44px;
+    border-style: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    box-shadow: 0 1.5px 0 0 #b0a7e7;
+   
+}
+.todoInput:focus{
+    outline: none;
+}
+
+.list{
+    background-color: #b6afe2;
+}
+
+.addbtn{
+    width: 310px;
+    height: 47px;
+    background-color: #265696;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    border-style: none;
+    align-items: center;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+.addbtn:hover{
+    cursor: pointer;
+}
+
+.todo{
+    background-color: white;
+    border: 1px solid rgb(190, 190, 190, 0.411);
+    margin-top: 40px;
+    margin: auto;
+    width: 1794px;
+    align-items: center;
+    box-shadow: 0 0px 0 0 rgb(190, 190, 190, 0.411);
+}
+.heading{
+    padding-left: 25px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
+
+.list{
+    list-style: none;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li{
+    display: flex;
+    padding: 15px 25px;
+    border-bottom: 1px solid rgba(202, 202, 202, 0.411);
+    align-items: center;
+    justify-content: space-between;
+}
+ul li:last-child{
+    border-bottom: 0px !important;
+}
+ul li i:hover{
+    cursor: pointer;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    text-shadow: 0 0 8px rgba(59, 53, 53, 0.623);
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #265696;
+}
+.checked{
+    display: flex;
+    color: green;
+    border: 1px solid green;
+    background-color: rgb(229, 255, 229);
+    border-radius: 5px;
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: -2px;
+}
+.unchecked{
+    display: flex;
+    color: red;
+    border: 1px solid red;
+    background-color: rgb(255, 236, 236);
+    border-radius: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.done label{
+    text-decoration: line-through;
+}
+
+.delete{
+    border: 1px solid gray;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.left{
+    display: flex;
+    justify-self: flex-start !important;
+}
+.task{
+    display: flex;
+    border-style: none;
+    font-size: medium;
+}
+.fa fa-trash{
+    display: flex;
+    justify-self: start;
+}
