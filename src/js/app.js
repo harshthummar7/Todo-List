@@ -1,14 +1,15 @@
-const form = document.querySelector('form');
+const btn = document.querySelector('form button');
+var list = document.querySelector('#mylist');
 
-form.addEventListener('click',event=>{
+
+btn.addEventListener('click',event=>{
     event.preventDefault();
      const input = document.querySelector('.todoInput');
-    //  input.value = "";
 
     
     const text = input.value;
     
-    if(text!==''){
+    if(text.trim()!==''){
         addToDo(text);
         input.value = '';
     }
@@ -16,7 +17,7 @@ form.addEventListener('click',event=>{
     
 });
 
-function addToDo(text){
+const addToDo = (text) => {
     let ref = localStorage.getItem('todoRef');
     let toDos = JSON.parse(ref);
     var dup = 0
@@ -45,15 +46,17 @@ function addToDo(text){
     showTodo(toDos);
 }
 
-function showTodo(array){
-    
-    const div = document.getElementById('myTodo');
-    const list = document.querySelector('#mylist');
-    
-    list.innerHTML='';
-    const h2 = document.getElementById('notfound');
 
-    array.forEach(function(todo, index){
+
+const showTodo = (array) => {
+    
+    //const div = document.getElementById('myTodo');
+    const list = document.querySelector('#mylist');
+
+    const h2 = document.getElementById('notfound');
+    list.innerHTML='';
+
+    array.forEach((todo, index) => {
 
         const isChecked = todo.checked ? 'done' : '';
 
@@ -83,7 +86,7 @@ function showTodo(array){
 }
 
 
-function deleteTodo(id){
+const deleteTodo = (id) => {
     const input = document.querySelector('.todoInput');
     input.value = "";
     
@@ -98,8 +101,8 @@ function deleteTodo(id){
 
 const todoInput = document.getElementById("todoInput");
 
-todoInput.addEventListener('input',function(){
-    let searchInput= todoInput.value.toLowerCase();
+todoInput.addEventListener('input',() => {
+    let searchInput= todoInput.value;
 
 
     let ref = localStorage.getItem('todoRef');
@@ -107,10 +110,10 @@ todoInput.addEventListener('input',function(){
     let toDos = JSON.parse(ref);
     let tempArr = [];
 
-    toDos.forEach(function(task){
+    toDos.forEach((task) => {
         let taskTxt = task.name;
 
-        if(taskTxt.toLowerCase().includes(searchInput)){
+        if(taskTxt.includes(searchInput)){
            
             tempArr.push(task);
         }
@@ -120,10 +123,10 @@ todoInput.addEventListener('input',function(){
     showTodo(tempArr);
 })
 
-function checkingCheckBox(myIndex){
+const checkingCheckBox = (myIndex) => {
     const ref = localStorage.getItem('todoRef');
     let tempArr = JSON.parse(ref);
-    tempArr.forEach(function(item, index){
+    tempArr.forEach((item, index) => {
         if(myIndex==index){
             item.checked=!item.checked;
         }
@@ -141,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toDos = JSON.parse(ref);
         showTodo(toDos);
     }
-    else{
-        localStorage.setItem("todoRef", JSON.stringify(toDos));
-    }
+    // else{
+    //     localStorage.setItem("todoRef", JSON.stringify(toDos));
+    // }
   });
